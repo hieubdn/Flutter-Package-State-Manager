@@ -2,7 +2,8 @@
 
 ## Giới thiệu
 
-`flutter_package_state_manager` là một package Flutter nhẹ, đơn giản và dễ sử dụng, giúp quản lý trạng thái ứng dụng một cách hiệu quả mà không cần phải tích hợp các giải pháp quản lý trạng thái phức tạp như `Provider`, `Riverpod`, hay `Bloc`. Package này giúp bạn tạo và quản lý trạng thái cho các widget của mình, dễ dàng thêm, sửa, xóa dữ liệu mà không cần phải sử dụng các kiến thức phức tạp.
+`flutter_package_state_manager` là một package Flutter nhẹ, đơn giản và dễ sử dụng, giúp quản lý trạng thái ứng dụng một cách hiệu quả mà không cần phải tích hợp các giải pháp quản lý trạng thái phức tạp như `Provider`, `Riverpod`, hay `Bloc`. 
+Package này giúp bạn tạo và quản lý trạng thái cho các widget của mình, dễ dàng thêm, sửa, xóa dữ liệu mà không cần phải sử dụng các kiến thức phức tạp.
 
 ## Tác dụng
 
@@ -146,7 +147,7 @@ Expanded(
 
 `observeState(String key, StateListener listener)`: Quan sát thay đổi của trạng thái và gọi listener khi có thay đổi.
 
-### Lý do sử dụng flutter_package_state_manager
+## Lý do sử dụng flutter_package_state_manager
 
 - **Đơn giản và dễ sử dụng**: Không cần phải học các khái niệm phức tạp, chỉ cần tạo trạng thái và cập nhật nó.
 - **Cập nhật UI tự động**: UI sẽ tự động được cập nhật mỗi khi trạng thái thay đổi.
