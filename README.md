@@ -62,12 +62,16 @@ stateManager.observeState('itemList', () {
 
 ```dart
 void _addItem() {
-  final newItem = _controller.text; // Lấy giá trị từ TextField
+  // Lấy giá trị từ TextField
+  final newItem = _controller.text;
   if (newItem.isNotEmpty) {
     final currentList = stateManager.getState<List<String>>('itemList');
-    currentList.add(newItem); // Thêm item vào danh sách
-    stateManager.updateState<List<String>>('itemList', currentList); // Cập nhật trạng thái
-    _controller.clear(); // Làm sạch TextField
+    // Thêm item vào danh sách
+    currentList.add(newItem);
+    // Cập nhật trạng thái
+    stateManager.updateState<List<String>>('itemList', currentList); 
+    // Làm sạch TextField
+    _controller.clear();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Item Added')));
   }
 }
@@ -79,8 +83,10 @@ void _addItem() {
 ```dart
 void _updateItem(int index, String newItem) {
   final currentList = stateManager.getState<List<String>>('itemList');
-  currentList[index] = newItem; // Cập nhật item tại index
-  stateManager.updateState<List<String>>('itemList', currentList); // Cập nhật trạng thái
+  // Cập nhật item tại index
+  currentList[index] = newItem;
+  // Cập nhật trạng thái
+  stateManager.updateState<List<String>>('itemList', currentList); 
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Item Updated')));
 }
 ```
@@ -91,8 +97,10 @@ void _updateItem(int index, String newItem) {
 ```dart
 void _removeItem(int index) {
   final currentList = stateManager.getState<List<String>>('itemList');
-  currentList.removeAt(index); // Xóa item tại index
-  stateManager.updateState<List<String>>('itemList', currentList); // Cập nhật trạng thái
+  // Xóa item tại index
+  currentList.removeAt(index);
+  // Cập nhật trạng thái
+  stateManager.updateState<List<String>>('itemList', currentList); 
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Item Deleted')));
 }
 ```
