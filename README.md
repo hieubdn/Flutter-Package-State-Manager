@@ -11,7 +11,24 @@ Package này giúp bạn tạo và quản lý trạng thái cho các widget củ
 - **Cập nhật UI tự động**: Sau khi thay đổi trạng thái, UI sẽ tự động được cập nhật mà không cần phải làm thủ công.
 - **Đơn giản và dễ sử dụng**: Không yêu cầu kiến thức về các giải pháp quản lý trạng thái phức tạp.
 
-## Cài đặt
+# Hướng dẫn Clone source code và test Package
+1. Clone source code về thông qua lệnh:
+```terminal
+git clone https://github.com/hieubdn/Flutter-Package-State-Manager.git
+```
+2. Để chạy file test của Package:
+```
+flutter test
+```
+3. Để xem UI test
+```
+cd example
+
+flutter run
+```
+
+# Cài đặt & Hướng dẫn sử dụng Package
+## Cài đặt Package
 
 Để sử dụng `flutter_package_state_manager` trong dự án Flutter của bạn, làm theo các bước sau:
 
@@ -28,7 +45,7 @@ dependencies:
 ```
 flutter pub get
 ```
-## Hướng dẫn sử dụng
+## Hướng dẫn sử dụng 
 Để sử dụng package này, bạn cần làm theo các bước sau:
 
 ### 1. Khởi tạo và sử dụng `StateManager`
