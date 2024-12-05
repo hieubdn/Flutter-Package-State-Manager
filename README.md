@@ -30,35 +30,36 @@ flutter pub get
 ## Hướng dẫn sử dụng
 Để sử dụng package này, bạn cần làm theo các bước sau:
 
-1. Khởi tạo và sử dụng `StateManager`
+### 1. Khởi tạo và sử dụng `StateManager`
 
 Để sử dụng `StateManager`, bạn cần tạo một instance của nó trong ứng dụng Flutter của bạn.
 ```dart
 final stateManager = StateManager();
 ```
 
-2. Tạo và quản lý trạng thái
+### 2. Tạo và quản lý trạng thái
 
-Bạn có thể tạo một trạng thái với bất kỳ kiểu dữ liệu nào mà bạn muốn. Ví dụ, để tạo một danh sách các item (List<String>), bạn sẽ làm như sau:
+Bạn có thể tạo một trạng thái với bất kỳ kiểu dữ liệu nào mà bạn muốn `(Ví dụ, để tạo một danh sách các item (List<String>))` bạn sẽ làm như sau:
 
-dart
-Copy code
+```dart
 stateManager.createState<List<String>>('itemList', []);
-3. Quan sát thay đổi trạng thái
-Để cập nhật UI khi trạng thái thay đổi, bạn có thể sử dụng phương thức observeState. Phương thức này sẽ cho phép bạn theo dõi sự thay đổi của trạng thái và tự động cập nhật UI khi có thay đổi.
+```
 
-dart
-Copy code
+### 3. Quan sát thay đổi trạng thái
+Để cập nhật UI khi trạng thái thay đổi, bạn cần sử dụng phương thức `observeState`. Phương thức này sẽ cho phép bạn theo dõi sự thay đổi của trạng thái và tự động cập nhật UI khi có thay đổi.
+
+```dart
 stateManager.observeState('itemList', () {
   setState(() {
     // UI sẽ được cập nhật mỗi khi trạng thái thay đổi
   });
 });
-4. Thêm item vào danh sách
+```
+
+### 4. Thêm item vào danh sách
 Để thêm một item vào danh sách, bạn có thể sử dụng phương thức sau:
 
-dart
-Copy code
+```dart
 void _addItem() {
   final newItem = _controller.text; // Lấy giá trị từ TextField
   if (newItem.isNotEmpty) {
@@ -69,42 +70,46 @@ void _addItem() {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Item Added')));
   }
 }
-5. Cập nhật item trong danh sách
+```
+
+### 5. Cập nhật item trong danh sách
 Để cập nhật một item trong danh sách, bạn cần truyền vào vị trí của item và giá trị mới:
 
-dart
-Copy code
+```dart
 void _updateItem(int index, String newItem) {
   final currentList = stateManager.getState<List<String>>('itemList');
   currentList[index] = newItem; // Cập nhật item tại index
   stateManager.updateState<List<String>>('itemList', currentList); // Cập nhật trạng thái
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Item Updated')));
 }
-6. Xóa item khỏi danh sách
+```
+
+### 6. Xóa item khỏi danh sách
 Để xóa một item khỏi danh sách, bạn có thể sử dụng phương thức sau:
 
-dart
-Copy code
+```dart
 void _removeItem(int index) {
   final currentList = stateManager.getState<List<String>>('itemList');
   currentList.removeAt(index); // Xóa item tại index
   stateManager.updateState<List<String>>('itemList', currentList); // Cập nhật trạng thái
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Item Deleted')));
 }
-7. Reset danh sách
-Để reset lại danh sách (xóa tất cả item trong danh sách), bạn có thể sử dụng phương thức sau:
+```
 
-dart
-Copy code
+### 7. Reset danh sách
+Để reset lại danh sách `(xóa tất cả item trong danh sách)`, bạn có thể sử dụng phương thức sau:
+
+```dart
 void _resetList() {
   stateManager.updateState<List<String>>('itemList', []);
   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('List Reset')));
 }
-8. Hiển thị danh sách trong UI
-Để hiển thị danh sách các item, bạn có thể sử dụng StreamBuilder để tự động cập nhật UI khi trạng thái thay đổi. Dưới đây là cách hiển thị danh sách:
+```
 
-dart
-Copy code
+### 8. Hiển thị danh sách trong UI
+Để hiển thị danh sách các item, bạn có thể sử dụng `StreamBuilder` để tự động cập nhật UI khi trạng thái thay đổi. Dưới đây là cách hiển thị danh sách:
+
+```dart
 Expanded(
   child: StreamBuilder<List<String>>(
     stream: Stream.periodic(const Duration(milliseconds: 100), (_) {
@@ -130,15 +135,22 @@ Expanded(
     },
   ),
 ),
-Tóm tắt các phương thức chính
-createState<T>(String key, T initialState): Tạo một trạng thái mới với key và giá trị ban đầu initialState.
-getState<T>(String key): Lấy trạng thái hiện tại từ key.
-updateState<T>(String key, T newState): Cập nhật trạng thái với giá trị mới.
-observeState(String key, StateListener listener): Quan sát thay đổi của trạng thái và gọi listener khi có thay đổi.
-Lý do sử dụng flutter_package_state_manager
-Đơn giản và dễ sử dụng: Không cần phải học các khái niệm phức tạp, chỉ cần tạo trạng thái và cập nhật nó.
-Cập nhật UI tự động: UI sẽ tự động được cập nhật mỗi khi trạng thái thay đổi.
-Không phụ thuộc vào các giải pháp quản lý trạng thái phức tạp: Giải pháp nhẹ và dễ dàng tích hợp vào dự án Flutter của bạn.
+```
 
+## Tóm tắt các phương thức chính
+`createState<T>(String key, T initialState)`: Tạo một trạng thái mới với key và giá trị ban đầu `initialState`.
 
-Sửa cho tôi flie rademe.md trên cho dễ đọc (phân biệt rõ tiêu đề, gạch dòng, code, ....)
+`getState<T>(String key)`: Lấy trạng thái hiện tại từ key.
+
+`updateState<T>(String key, T newState)`: Cập nhật trạng thái với giá trị mới.
+
+`observeState(String key, StateListener listener)`: Quan sát thay đổi của trạng thái và gọi listener khi có thay đổi.
+
+### Lý do sử dụng flutter_package_state_manager
+
+- **Đơn giản và dễ sử dụng**: Không cần phải học các khái niệm phức tạp, chỉ cần tạo trạng thái và cập nhật nó.
+- **Cập nhật UI tự động**: UI sẽ tự động được cập nhật mỗi khi trạng thái thay đổi.
+- **Không phụ thuộc vào các giải pháp quản lý trạng thái phức tạp**: Giải pháp nhẹ và dễ dàng tích hợp vào dự án Flutter của bạn.
+
+# Tài liệu tham khảo
+* [Flutter State Management] (https://pub.dev/packages/flutter_package_state_manager)
