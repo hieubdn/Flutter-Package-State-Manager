@@ -153,4 +153,4 @@ Expanded(
 - **Không phụ thuộc vào các giải pháp quản lý trạng thái phức tạp**: Giải pháp nhẹ và dễ dàng tích hợp vào dự án Flutter của bạn.
 
 # Tài liệu tham khảo
-* [Flutter State Management] (https://pub.dev/packages/flutter_package_state_manager)
+* [Flutter State Management](https://pub.dev/packages/flutter_package_state_manager)
