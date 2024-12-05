@@ -14,28 +14,31 @@
 
 Để sử dụng `flutter_package_state_manager` trong dự án Flutter của bạn, làm theo các bước sau:
 
-### Bước 1: Thêm package vào dự án
-
 1. Mở file `pubspec.yaml` của dự án Flutter.
 2. Thêm `flutter_package_state_manager` vào phần `dependencies`:
 
-```yaml
+``` yaml
 dependencies:
   flutter:
     sdk: flutter
   flutter_package_state_manager: ^1.0.0
-Chạy lệnh sau để cài đặt package:
-bash
-Copy code
+```
+3. Chạy lệnh sau để cài đặt package:
+```
 flutter pub get
-Hướng dẫn sử dụng
-1. Khởi tạo và sử dụng StateManager
-Để sử dụng StateManager, bạn cần tạo một instance của nó trong ứng dụng Flutter của bạn.
+```
+## Hướng dẫn sử dụng
+Để sử dụng package này, bạn cần làm theo các bước sau:
 
-dart
-Copy code
+1. Khởi tạo và sử dụng `StateManager`
+
+Để sử dụng `StateManager`, bạn cần tạo một instance của nó trong ứng dụng Flutter của bạn.
+```dart
 final stateManager = StateManager();
+```
+
 2. Tạo và quản lý trạng thái
+
 Bạn có thể tạo một trạng thái với bất kỳ kiểu dữ liệu nào mà bạn muốn. Ví dụ, để tạo một danh sách các item (List<String>), bạn sẽ làm như sau:
 
 dart
