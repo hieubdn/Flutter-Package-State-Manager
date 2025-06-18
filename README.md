@@ -1,5 +1,25 @@
 # flutter_package_state_manager
 
+![Last Commit](https://img.shields.io/github/last-commit/hieubdn/Flutter-Package-State-Manager)
+![Month](https://img.shields.io/badge/Updated-May-blue)
+![Dart](https://img.shields.io/badge/Dart-60%25-blue?logo=dart)
+![Languages](https://img.shields.io/github/languages/count/hieubdn/Flutter-Package-State-Manager)
+
+---
+
+### Built with the tools and technologies:
+
+![Dart](https://img.shields.io/badge/Dart-blue?logo=dart)
+![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter)
+![Markdown](https://img.shields.io/badge/Markdown-000000?logo=markdown)
+![JSON](https://img.shields.io/badge/JSON-000000?logo=json)
+![Test](https://img.shields.io/badge/Test%20Driven-Testing-green?logo=testing-library)
+
+![StateManagement](https://img.shields.io/badge/State_Management-Custom_Lightweight-blueviolet)
+![Lightweight](https://img.shields.io/badge/No%20Bloc%2FProvider%2FRiverpod-lightgrey)
+
+
+
 ## Giới thiệu
 
 `flutter_package_state_manager` là một package Flutter nhẹ, đơn giản và dễ sử dụng, giúp quản lý trạng thái ứng dụng một cách hiệu quả mà không cần phải tích hợp các giải pháp quản lý trạng thái phức tạp như `Provider`, `Riverpod`, hay `Bloc`. 
